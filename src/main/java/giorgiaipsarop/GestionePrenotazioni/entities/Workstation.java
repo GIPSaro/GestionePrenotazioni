@@ -31,7 +31,7 @@ private String description;
     private Building building;
 @OneToMany(mappedBy = "workstation")
     @ToString.Exclude
-    private List<Reservation> workstationList;
+    private List<Reservation> reservationList;
 
 public Workstation(String description, WorkstationType workstationType, int maxUser, Building building){
     this.description=description;

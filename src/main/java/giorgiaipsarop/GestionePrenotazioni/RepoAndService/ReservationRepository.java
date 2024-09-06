@@ -15,6 +15,7 @@ import java.util.UUID;
 @Repository
 public interface ReservationRepository extends JpaRepository<Reservation, UUID> {
 
+    void deleteByWorkstationId(UUID workstationId);
     @Query("SELECT r FROM Reservation r WHERE r.user = :user AND r.date = :date")
     List<Reservation> filterBySameUserAndDate(User user, LocalDate date);
 

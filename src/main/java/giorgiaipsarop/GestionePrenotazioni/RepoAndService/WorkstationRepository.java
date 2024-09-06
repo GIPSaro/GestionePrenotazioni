@@ -13,6 +13,7 @@ import java.util.UUID;
 @Repository
 public interface WorkstationRepository extends JpaRepository<Workstation, UUID> {
 
+
     @Query("SELECT w FROM Workstation w JOIN w.building b WHERE w.workstationType = :workstationType AND LOWER(b.city) = LOWER(:city)")
     List<Workstation> findByTypeAndCity(WorkstationType workstationType, String city);
 }
