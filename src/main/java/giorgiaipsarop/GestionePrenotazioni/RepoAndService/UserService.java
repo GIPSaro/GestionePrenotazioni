@@ -24,4 +24,10 @@ public class UserService {
     public User findById(UUID userId){
         return userRepository.findById(userId).orElseThrow(()->new ItemNotFoundException(userId));
     }
+
+    public void findByIdAndDelete(UUID userId){
+        User found = this.findById(userId);
+        userRepository.delete(found);
+        log.info("Utente con id " + userId + " cancellato correttamente!");
+    }
 }
