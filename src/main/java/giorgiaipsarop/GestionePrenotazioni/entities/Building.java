@@ -17,8 +17,7 @@ import java.util.UUID;
 @ToString
 public class Building {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Setter
     private UUID id;
     private String name;

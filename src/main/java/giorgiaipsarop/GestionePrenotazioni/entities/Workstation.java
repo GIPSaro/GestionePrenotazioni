@@ -3,12 +3,10 @@ package giorgiaipsarop.GestionePrenotazioni.entities;
 
 import giorgiaipsarop.GestionePrenotazioni.enums.WorkstationType;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 @Table(name = "workstations")
@@ -18,9 +16,9 @@ import java.util.List;
 @NoArgsConstructor
 public class Workstation {
 @Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "id", nullable = false)
-private Long id;
+@GeneratedValue(strategy = GenerationType.UUID)
+@Setter(AccessLevel.NONE)
+private UUID id;
 private String description;
 @Enumerated(EnumType.STRING)
     private WorkstationType workstationType;
